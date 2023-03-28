@@ -14,8 +14,8 @@ spec:
         node: web
     spec:
       containers:
-      - name: node-site
-        image: nodeflux
+      - image: nodeflux:v2
+        name: nodeflux
         imagePullPolicy: Never
 ---
 apiVersion: v1
