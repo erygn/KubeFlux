@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: ./helm/node-helm
+      chart: ../helm/node-helm
       version: "0.1.0"
       sourceRef:
         kind: GitRepository
