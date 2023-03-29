@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: website
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./helm/node-helm
+      version: "0.1.0"
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: default
+      interval: 1m
