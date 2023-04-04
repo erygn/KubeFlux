@@ -5,7 +5,7 @@ const port = 8000
 let count = 0
 
 app.get('/', (req, res) => {
-  res.send('Node, Docker, Kube, Helm, Flux!', count)
+  res.send('Node, Docker, Kube, Helm, Flux! ' + count)
 })
 
 app.get('/count', (req, res) => {
