@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodecron
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      node: webcron
+  template:
+    metadata:
+      labels:
+        node: webcron
+    spec:
+      containers:
+      - name: nodecron
+        image: nodecron
+        imagePullPolicy: Never
