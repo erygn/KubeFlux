@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 app.get('/count', (req, res) => {
   count++;
-  res.send('')
+  res.send('increment')
 })
 
 app.get('/v2', (req, res) => {

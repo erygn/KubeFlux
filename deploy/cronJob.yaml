@@ -16,5 +16,16 @@ spec:
               value: "8000"
             - name: URL
               value: "node-entrypoint.default.svc.cluster.local"
+            volumeMounts:
+              - mountPath: "/var/app"
+                name: secret-volume
+                readOnly: true
+            #envFrom:
+            #- secretRef:
+                #name: cron-secret
+          volumes:
+            - name: secret-volume
+              secret:
+                secretName: cron-secret
           restartPolicy: OnFailure
   schedule: "*/1 * * * *"

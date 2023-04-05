@@ -15,3 +15,11 @@ targetNamespace: default, définir le name space ou l'installation va se faire
 ## Helm UnitTest
 
 docker run -ti --rm -v C:\Users\EtienneReygner\Documents\Nex\DataIngestion\helm:/apps quintush/helm-unittest:3.3.0-0.2.10 -3 -d -u ./data-ingestion
+
+## CronJob
+
+Avoir construit les images server (nodekube) et cron (nodecron)
+
+cd deploy
+kubectl apply -f kube.yaml -f secretcron.yaml -f cronJob.yaml
+kubectl get jobs --watch
